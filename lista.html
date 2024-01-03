@@ -1,0 +1,839 @@
+<html lang="en">
+
+<head>
+  <link rel="icon" href="nolimitlogo.png" type="image/gif" sizes="32x32">
+  <title>No Limit - Repertoár</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Satisfy|Bree+Serif|Candal|PT+Sans">
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <style>
+    body {
+      font: 400 15px/1.8 Lato, sans-serif;
+      color: #777;
+    }
+
+    h3,
+    h4 {
+      margin: 10px 0 30px 0;
+      letter-spacing: 5px;
+      font-size: 15px;
+      color: #111;
+      font-style: italic;
+    }
+
+    .container {
+      padding: 80px 120px;
+    }
+
+    .person {
+      border: 10px solid transparent;
+      margin-bottom: 25px;
+      width: 80%;
+      height: 80%;
+      opacity: 0.7;
+    }
+
+    .person:hover {
+      border-color: #f1f1f1;
+    }
+
+    .carousel-inner img {
+      -webkit-filter: grayscale(90%);
+      filter: grayscale(90%);
+      /* make all photos black and white */
+      width: 100%;
+      /* Set width to 100% */
+      margin: auto;
+    }
+
+    .carousel-caption h3 {
+      color: #fff !important;
+    }
+
+    @media (max-width: 600px) {
+      .carousel-caption {
+        display: none;
+        /* Hide the carousel text when the screen is less than 600 pixels wide */
+      }
+    }
+
+    .bg-1 {
+      background: #2d2d30;
+      color: #bdbdbd;
+    }
+
+    .bg-1 h3 {
+      color: #fff;
+    }
+
+    .bg-1 p {
+      font-style: italic;
+    }
+
+    .list-group-item:first-child {
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+    }
+
+    .list-group-item:last-child {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+    }
+
+    .thumbnail p {
+      margin-top: 15px;
+      color: #555;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      background-color: #333;
+      color: #f1f1f1;
+      border-radius: 0;
+      transition: .2s;
+    }
+
+    .btn:hover,
+    .btn:focus {
+      border: 1px solid #333;
+      background-color: #fff;
+      color: #000;
+    }
+
+    .modal-header,
+    h4,
+    .close {
+      background-color: #333;
+      color: #fff !important;
+      text-align: center;
+      font-size: 30px;
+    }
+
+    .modal-header,
+    .modal-body {
+      padding: 40px 50px;
+    }
+
+    .nav-tabs li a {
+      color: #777;
+    }
+
+    #googleMap {
+      width: 100%;
+      height: 400px;
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+    }
+
+    .navbar {
+      font-family: Montserrat, sans-serif;
+      margin-bottom: 0;
+      background-color: #2d2d30;
+      border: 0;
+      font-size: 11px !important;
+      letter-spacing: 4px;
+      opacity: 0.9;
+    }
+
+    .navbar li a,
+    .navbar .navbar-brand {
+      color: #d5d5d5 !important;
+    }
+
+    .navbar-nav li a:hover {
+      color: #fff !important;
+    }
+
+    .navbar-nav li.active a {
+      color: #fff !important;
+      background-color: #000000 !important;
+    }
+
+    .navbar-default .navbar-toggle {
+      border-color: transparent;
+    }
+
+    .open .dropdown-toggle {
+      color: #fff;
+      background-color: #555 !important;
+    }
+
+    .dropdown-menu li a {
+      color: #d63535 !important;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color: red !important;
+    }
+
+    footer {
+      background-color: #2d2d30;
+      color: #f5f5f5;
+      padding: 32px;
+    }
+
+    footer a {
+      color: #f5f5f5;
+    }
+
+    footer a:hover {
+      color: #777;
+      text-decoration: none;
+    }
+
+    .form-control {
+      border-radius: 0;
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    .warn {
+      background-color: #FF0000 !important;
+    }
+
+    h1 {
+      animation: h1 4s 1;
+    }
+
+    @keyframes h1 {
+      0% {
+        letter-spacing: 0px;
+      }
+
+      30% {
+        opacity: 0.5;
+        transform: rotateY(180deg);
+      }
+
+      60% {
+        letter-spacing: 0px;
+      }
+
+    }
+  </style>
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <link rel="icon" href="nolimitlogo.png" type="image/gif" sizes="32x32">
+        <a class="navbar-brand" href="index.php">VISSZA</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="story.html" class="warn">STORY</a></li>
+          <li><a href="extra.html" class="">EXTRÁK</a></li>
+          <!--<li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>-->
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <script>
+    $(document).ready(function () {
+      // Initialize Tooltip
+      $('[data-toggle="tooltip"]').tooltip();
+
+      // Add smooth scrolling to all links in navbar + footer link
+      $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 900, function () {
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+    })
+  </script>
+
+</body>
+
+</html>
+<section id="menu-list" class="section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center marb-35">
+        <h1 class="header-h">Repertoár</h1>
+        <p class="header-p">A játszott számok között műfaj szerint válogathatsz! <br>Feltöltés alatt...</p>
+      </div>
+
+      <div class="col-md-12  text-center" id="menu-flters">
+        <ul class="list-group">
+          <li><a class="filter active" data-filter=".menu-restaurant">Összes</a></li>
+          <li><a class="filter" data-filter=".pop">Pop</a></li>
+          <li><a class="filter" data-filter=".rock">Rock</a></li>
+          <li><a class="filter" data-filter=".disco">Disco</a></li>
+          <li><a class="filter" data-filter=".retro">Retro</a></li>
+        </ul>
+      </div>
+
+      <div id="menu-wrapper">
+
+        <div class="retro menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=2Xeay7pG2xY" target="_blank">Embertelen dal</a>
+          </span>
+          <span class="menu-price">LGT</span>
+        </div>
+
+        <div class="retro menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=ziLagAgoPCE" target="_blank">Runaway</a>
+          </span>
+          <span class="menu-price">Del Shannon</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="rock menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=VTPox5RtqVg" target="_blank">Dudu</a>
+
+          </span>
+          <span class="menu-price">Republic</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="retro menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=iGaF4tKUl0o" target="_blank">Stumblin in</a>
+
+          </span>
+          <span class="menu-price">Suzi Quatro</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="pop menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=NYU6NP4_8lU" target="_blank">Szerelmvonat</a>
+
+          </span>
+          <span class="menu-price">Demjén Ferenc</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="retro menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=hxyEMryOkOU" target="_blank">Utcán</a>
+
+          </span>
+          <span class="menu-price">Illés</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="retro menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=9lum2gYimq0" target="_blank">Postakocsi</a>
+
+          </span>
+          <span class="menu-price">Sprint</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="retro menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=AW7EFqyyDLg" target="_blank">Ne gondold</a>
+
+          </span>
+          <span class="menu-price">Illés</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="retro menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=ngw7AvXbA3s" target="_blank">Carolina</a>
+
+          </span>
+          <span class="menu-price">Szécsi Pál</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="rock menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=OcDqSyhNJtY" target="_blank">Megöl a vágy</a>
+
+          </span>
+          <span class="menu-price">Takáts Tamás</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="retro menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=pOxAqhTaXzw" target="_blank">All my loving</a>
+
+          </span>
+          <span class="menu-price">Beatles</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="retro menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=7btJ0wLF0uM" target="_blank">Régi csibészek</a>
+
+          </span>
+          <span class="menu-price">Omega</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+
+        <div class="rock menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=bx1Bh8ZvH84" target="_blank">Wonderwall</a>
+
+          </span>
+          <span class="menu-price">Oasis</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="pop menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=QeCjLl7jtfY" target="_blank">Induljon a banzáj</a>
+
+          </span>
+          <span class="menu-price">Bonanza Banzai</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="retro menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=Cr58NwOa5-Y" target="_blank">Oh, kisleány</a>
+
+          </span>
+          <span class="menu-price">Illés</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="retro menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=4szfWQ7Sspg" target="_blank">Petróleum lámpa</a>
+
+          </span>
+          <span class="menu-price">Omega</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="retro menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=ttMt9SHRwsM" target="_blank">Mary Lou</a>
+
+          </span>
+          <span class="menu-price">Ricky Nelson</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="pop menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=4eyE3KQK3ig" target="_blank">Fagyi</a>
+
+          </span>
+          <span class="menu-price">Bikini</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="rock menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=uPHON-21Frw" target="_blank">Csókkirály</a>
+
+          </span>
+          <span class="menu-price">Fenyő Miklós</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="rock menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=EOCoqUsWZi0" target="_blank">Mondd kis kócos</a>
+
+          </span>
+          <span class="menu-price">Komár László</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="rock menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=tl6xYkRj8ng" target="_blank">Csavard fel a szőnyeget</a>
+
+          </span>
+          <span class="menu-price">Fenyő Miklós</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="rock menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=grYHSMgjAZ4" target="_blank">Made in Hungaria</a>
+
+          </span>
+          <span class="menu-price">Fenyő Miklós</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="rock menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=7fYTOTCBK6Q" target="_blank">Szóljon hangosan az ének</a>
+
+          </span>
+          <span class="menu-price">Soltész Rezső</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="rock menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=aAwbuL1iJP4" target="_blank">Afrika</a>
+
+          </span>
+          <span class="menu-price">KFT</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="rock menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=eh8eb_ACLl8" target="_blank">Twist mix</a>
+
+          </span>
+          <span class="menu-price">Hungária+Chubby C.</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="pop menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=-LPsegzhgBc" target="_blank">Valahol egy lány</a>
+
+          </span>
+          <span class="menu-price">Koncz Zsuzsa</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="disco menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=l_Q41x3Om18" target="_blank">Nyár van</a>
+
+          </span>
+          <span class="menu-price">Neoton</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="rock menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=XfyEpmQM7bw" target="_blank">Proud Mary</a>
+
+          </span>
+          <span class="menu-price">Creedence C.</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="rock menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=CsK85hTsOMo" target="_blank">8 óra munka</a>
+
+          </span>
+          <span class="menu-price">Beatrice</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="rock menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=sNWUNPg6tzY" target="_blank">Azok a boldog szép napok</a>
+
+          </span>
+          <span class="menu-price">Beatrice</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="rock menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=eFjjO_lhf9c" target="_blank">Summer of 69</a>
+
+          </span>
+          <span class="menu-price">Bryan Adams</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="rock menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=oHh978yizqQ" target="_blank">Zöld a bíbor és a fekete</a>
+
+          </span>
+          <span class="menu-price">P. Mobil</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="rock menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=6cYfFZAGiVs" target="_blank">Menj tovább</a>
+
+          </span>
+          <span class="menu-price">P. Mobil</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="rock menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=xUBjPAgP0UE" target="_blank">Kör</a>
+
+          </span>
+          <span class="menu-price">Edda</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="rock menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=PJ7E40Ec5ec" target="_blank">Narcotic</a>
+
+          </span>
+          <span class="menu-price">Liquido</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="pop menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=hEEiwuFRm8I" target="_blank">Mielőtt végleg elmegyek</a>
+
+          </span>
+          <span class="menu-price">Bikini</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="rock menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=goqdbor3_3M" target="_blank">Azt beszéli már...</a>
+
+          </span>
+          <span class="menu-price">Skorpió</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="rock menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=D4do2fFv5p8" target="_blank">Halál a májra</a>
+
+          </span>
+          <span class="menu-price">Sing-sing</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="rock menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=33WHsa-gOww" target="_blank">Csak a szívemen át</a>
+
+          </span>
+          <span class="menu-price">Republic</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="rock menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=ROrprn6R7HE" target="_blank">Repül a bálna</a>
+
+          </span>
+          <span class="menu-price">Republic</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="pop menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=RMFR9ZJZdrs" target="_blank">Jó nekem</a>
+
+          </span>
+          <span class="menu-price">Ocho Macho</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="pop menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=Z6qnRS36EgE" target="_blank">Alice</a>
+
+          </span>
+          <span class="menu-price">Smokie</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="pop menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=N0AV_4cZdB4" target="_blank">Ha itt lennél...</a>
+
+          </span>
+          <span class="menu-price">Republic</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="pop menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=WhZtgwcNBbw" target="_blank">Lökd ide a sört</a>
+
+          </span>
+          <span class="menu-price">Fonográf</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="pop menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=YoFPSOQj2cU" target="_blank">Szállj el kismadár</a>
+
+          </span>
+          <span class="menu-price">Republic</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="pop menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=3M_KX4Him2E" target="_blank">Ki visz majd haza</a>
+
+          </span>
+          <span class="menu-price">Bikini</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="retro menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=Cf5A5nFWN9Q" target="_blank">Dédapám</a>
+
+          </span>
+          <span class="menu-price">Skorpió</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="pop menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=8BB641nUZ5k" target="_blank">16 tonna</a>
+
+          </span>
+          <span class="menu-price">Republic</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="rock menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=vx2u5uUu3DE" target="_blank">It's my life</a>
+
+          </span>
+          <span class="menu-price">Bon Jovi</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="rock menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=D4do2fFv5p8" target="_blank">Halál a májra</a>
+
+          </span>
+          <span class="menu-price">Sing-sing</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="rock menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=MJwr_Ku2TLY" target="_blank">Pocsolyába léptem</a>
+
+          </span>
+          <span class="menu-price">Takáts Tamás</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="pop menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=59ciBXZsiEU" target="_blank">Közeli helyeken</a>
+
+          </span>
+          <span class="menu-price">Bikini</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="rock menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=-WONlbkGOfo" target="_blank">Ha újrakezdeném</a>
+
+          </span>
+          <span class="menu-price">P.Mobil</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="pop menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=2UPTkZOl6WA" target="_blank">No miss</a>
+
+          </span>
+          <span class="menu-price">Komár László</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="pop menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=lEU011dGjbk" target="_blank">Olyan Ő</a>
+
+            </span>
+          <span class="menu-price">Bagossy Brothers</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="pop menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=-CinPyf08a4" target="_blank">Pálinka dal</a>
+
+            </span>
+          <span class="menu-price">Magna Cum Laude</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="pop menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=JS3c8FXvjYE" target="_blank">Indiántánc</a>
+
+            </span>
+          <span class="menu-price">Ákos</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+        <div class="rock menu-restaurant">
+          <span class="clearfix">
+            <a class="menu-title" href="https://www.youtube.com/watch?v=-zxMJjoSRSY" target="_blank">Világcsavargó</a>
+
+            </span>
+          <span class="menu-price">Road</span>
+          <span class="menu-subtitle"></span>
+        </div>
+
+      </div>
+    </div>
+</section>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/custom.js"></script>
+</body>
+
+</html>
